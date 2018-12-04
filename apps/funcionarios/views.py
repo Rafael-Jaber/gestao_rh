@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render, HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
