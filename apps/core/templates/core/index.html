@@ -4,10 +4,19 @@
 
 	<div class="row">
 		<div class="col-md-6">
-			<h1>Seja bem vindo!</h1>
+			<h1>Seja bem vindo,
+				<time>{{ usuario.funcionario.nome }}</time>
+			!</h1>
 		</div>
 		<div class="col-md-6">
 			<a href="{% url 'logout' %}">Logout</a>
+
+			{% if usuario.funcionario.empresa %}
+				<a href="{% url 'edit_empresa' usuario.funcionario.empresa.id%}">
+					Editar empresa</a>
+			{% else %}
+				<a href="{% url 'create_empresa' %}">Criar empresa</a>
+			{% endif %}
 		</div>
 	</div>
 
