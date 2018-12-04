@@ -4,7 +4,10 @@
 	List
 
 	{% for funcionario in object_list %}
-		<br/>{{ funcionario }}
+		<br/>
+		<a href="{% url 'update_funcionario' funcionario.id %}" >
+			{{ funcionario }}
+		</a>
 	{% endfor %}
 
 {% endblock %}
