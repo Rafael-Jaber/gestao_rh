@@ -7,7 +7,8 @@ from apps.empresas.models import Empresa
 
 class Funcionario(models.Model):
     nome = models.CharField(max_length=100)
-    User = models.OneToOneField(User, on_delete=models.CASCADE)
+    #TODO Lembre se de tirar essas parada do null e blank
+    User = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     departamentos = models.ManyToManyField(Departamento)
     empresa = models.ForeignKey(Empresa, on_delete=models.PROTECT, null=True, blank=True)
 
