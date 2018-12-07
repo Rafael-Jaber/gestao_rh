@@ -5,8 +5,8 @@
 	Banco de Horas<br/>
 
 	{% for horas in object_list %}
-		<a href="">
-			{{ horas.funcionario.nome }}
+		<a href="{% url 'update_hora-extra' horas.id %}">
+			{{ horas.funcionario.nome }} - {{ horas.motivo }}
 		</a>
 		<a href="">
 			Deletar
