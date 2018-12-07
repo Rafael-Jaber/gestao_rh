@@ -2,11 +2,28 @@
 {% load bootstrap %}
 
 {% block main %}
+	{% if object %}
+		<h4>Atualizar hora extra do {{ object.funcionario.nome }} - {{ object.motivo }}</h4>
+	{% else %}
+		<h4>Novo registro</h4>
+	{% endif %}
 
 	<form method="post">
 		{% csrf_token %}
 		{{ form|bootstrap }}
-		<button type="submit" class="btn btn-info">Salvar</button>
+		<div class="row">
+			<div class="col-sm text-center">
+				<button type="submit" class="btn btn-info">Salvar</button>
+			</div>
+			{% if object %}
+				<div class="col-sm text-center">
+					<a href="{% url 'delete_hora-extra' object.id %}" class="btn btn-danger">
+						Deletar
+					</a>
+				</div>
+			{% endif %}
+		</div>
 	</form>
+	<br/>
 
 {% endblock %}

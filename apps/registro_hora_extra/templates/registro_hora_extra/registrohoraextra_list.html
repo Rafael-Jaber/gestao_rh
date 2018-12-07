@@ -13,4 +13,9 @@
 		</a>
 	{% endfor %}
 
+	{% if not object_list %}
+		<h1>Não existem registro de horas no banco de dados</h1>
+	{% endif %}
+	<br/>
+	<a href="{% url 'create_hora-extra' %}" class="btn btn-info">Novo</a>
 {% endblock %}
