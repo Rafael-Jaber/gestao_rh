@@ -14,7 +14,7 @@ class HoraExtraList(ListView):
 
 class HoraExtraUpdate(UpdateView):
     model = RegistroHoraExtra
-    fields = ['horas', 'motivo']
+    fields = ['motivo', 'horas']
 
 
 class HoraExtraDelete(DeleteView):
@@ -24,4 +24,4 @@ class HoraExtraDelete(DeleteView):
 
 class HoraExtraCreate(CreateView):
     model = RegistroHoraExtra
-    fields = ['horas', 'motivo', 'funcionario']
+    fields = ['motivo', 'funcionario', 'horas']
