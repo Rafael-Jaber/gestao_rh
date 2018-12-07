@@ -8,7 +8,7 @@
 		<a href="{% url 'update_hora-extra' horas.id %}">
 			{{ horas.funcionario.nome }} - {{ horas.motivo }}
 		</a>
-		<a href="">
+		<a href="{% url 'delete_hora-extra' horas.id %}">
 			Deletar
 		</a>
 	{% endfor %}
