@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+	Banco de Horas<br/>
+
+	{% for horas in object_list %}
+		<a href="">
+			{{ horas.funcionario.nome }}
+		</a>
+		<a href="">
+			Deletar
+		</a>
+	{% endfor %}
+
+{% endblock %}
