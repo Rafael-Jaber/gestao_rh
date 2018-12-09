@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block styleInline %}
+	<style>
+		.test {
+			font-size: 50px;
+			color: #f05;
+		}
+	</style>
+{% endblock %}
+
+{% block main %}
+
+	<h1 class="test">Meu Relatorio</h1>
+	<h2>{{ sales }}</h2>
+
+{% endblock %}
