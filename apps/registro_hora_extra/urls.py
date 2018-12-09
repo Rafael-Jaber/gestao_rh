@@ -7,7 +7,8 @@ from .views import (
     HoraExtraUpdateFun,
     HoraExtraCreateFun,
     UtilizouHoraExtra,
-    ExportarCSV
+    ExportarCSV,
+    ExportarExcel
 
 )
 
@@ -20,4 +21,5 @@ urlpatterns = [
     path('novo/', HoraExtraCreate.as_view(), name="create_hora-extra"),
     path('novo/<int:funcionario_id>', HoraExtraCreateFun.as_view(), name="create_hora-fun"),
     path('exportar-csv', ExportarCSV.as_view(), name="exportar-csv"),
+    path('exportar-excel', ExportarExcel.as_view(), name="exportar-excel"),
 ]
