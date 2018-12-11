@@ -6,7 +6,7 @@ SECRET_KEY = 'zclb%l8r(o9u125c5619q4d#8*yhi5e&9d2r*r4v7ag-dub0s+'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.0.1.254', '52.67.53.244', 'localhost']
+ALLOWED_HOSTS = ['10.0.1.254', '52.67.53.244', 'localhost', '192.168.50.63']
 
 
 INSTALLED_APPS = [
@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'apps.registro_hora_extra',
     'apps.core',
     'bootstrapform',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

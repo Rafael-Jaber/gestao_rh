@@ -3,6 +3,16 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+from django.conf.urls import url
+from rest_framework import routers
+from apps.core import views
+
+routers = routers.DefaultRouter()
+routers.register(r'users', views.UserViewSet)
+routers.register(r'groups', views.GroupViewSet)
+
+
 urlpatterns = [
     path('', include('apps.core.urls')),
     path('funcionarios/', include('apps.funcionarios.urls')),
@@ -11,5 +21,8 @@ urlpatterns = [
     path('horas-extras/', include('apps.registro_hora_extra.urls')),
     path('empresa/', include('apps.empresas.urls')),
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
+
+    url(r'^', include(routers.urls)),
+    url(r'^api-auth', include('rest_framework.urls', namespace='rest_framework')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
