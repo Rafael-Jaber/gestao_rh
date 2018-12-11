@@ -8,11 +8,13 @@ from rest_framework import routers
 from apps.core import views
 
 from apps.funcionarios.api.views import FuncionarioViewSet
+from apps.registro_hora_extra.api.views import RegistroHoraExtraViewSet
 
 routers = routers.DefaultRouter()
 routers.register(r'users', views.UserViewSet)
 routers.register(r'groups', views.GroupViewSet)
 routers.register(r'api/funcionario', FuncionarioViewSet)
+routers.register(r'api/registro_hora', RegistroHoraExtraViewSet)
 
 
 urlpatterns = [
