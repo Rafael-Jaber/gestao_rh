@@ -3,14 +3,16 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 from django.conf.urls import url
 from rest_framework import routers
 from apps.core import views
 
+from apps.funcionarios.api.views import FuncionarioViewSet
+
 routers = routers.DefaultRouter()
 routers.register(r'users', views.UserViewSet)
 routers.register(r'groups', views.GroupViewSet)
+routers.register(r'api/funcionario', FuncionarioViewSet)
 
 
 urlpatterns = [
@@ -25,4 +27,5 @@ urlpatterns = [
 
     url(r'^', include(routers.urls)),
     url(r'^api-auth', include('rest_framework.urls', namespace='rest_framework')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
